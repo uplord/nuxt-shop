@@ -2,9 +2,9 @@
     <div class="">
         <section>
             <div class="container">
-                <h1>Checkout</h1>
+                <h1>Complete</h1>
                 <div class="button-group">
-                    <a href="/complete" class="button">Complete</a>
+                    <a href="/" class="button">Home</a>
                 </div>
             </div>
         </section>
@@ -13,6 +13,6 @@
 
 <script>
 export default {
-    name: 'CheckoutPage'
+    name: 'CompletePage'
 }
 </script>
