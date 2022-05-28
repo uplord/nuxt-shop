@@ -1,5 +1,10 @@
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
 html {
-    min-height: calc(100% + env(safe-area-inset-top));
+    //min-height: calc(100% + env(safe-area-inset-top));
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     background: blue;
 }
@@ -8,10 +13,6 @@ body {
     background: red;
     margin: 0;
     padding: 0;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 h1 {
@@ -27,4 +28,5 @@ h1 {
 
 section {
     padding: 20px 0;
+    min-height: 2000px;
 }
