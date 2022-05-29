@@ -2,7 +2,7 @@
 export default {
 
     globals: {
-        id: 'page', // replacing __nuxt
+        //id: 'page', // replacing __nuxt
         //context: '__FAJITAS__', // replacing __NUXT__
     },
 

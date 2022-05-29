@@ -1,0 +1,81 @@
+section {
+    margin: calc(var(--gutters) * 2) 0;
+
+    &.block {
+        padding: calc(var(--gutters) * 2) 0;
+        margin: 0;
+    }
+}
+
+@columns: 12;
+@column_width: 100% / @columns;
+@gutters = var(--gutters);
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gutters {
+    width: calc(100% + var(--gutters));
+    margin-right: calc(var(--gutters) / -2);
+	margin-left: calc(var(--gutters) / -2);
+    margin-bottom: 0;
+
+    &:last-child {
+	    margin-bottom: calc(var(--gutters) * -1);
+
+	    @media (max-width: 767px) {
+			//margin-bottom: 0;
+	    }
+    }
+
+    > [class*=col-] {
+        margin-left: calc(var(--gutters) / 2);
+		margin-right: calc(var(--gutters) / 2);
+		margin-bottom: var(--gutters);
+    }
+}
+
+@media (max-width: 800px) {
+
+	[class*=col-] {
+		width: 100%;
+	}
+}
+
+@media (min-width: 801px) {
+	.columns(@columns, var(--gutters));
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+	.columns(@columns, var(--gutters), ~'tablet-');
+}
+
+.column(@index, @gutter: 0px, @name: ~'') when (@index > 0) {
+
+    & when not (@gutter = 0px) {
+        > .col-@{name}@{index} {
+            width: calc(@column_width * @index - @gutter);
+        }
+    }
+
+    & when (@gutter = 0px) {
+        .col-@{name}@{index} {
+            width: calc(@column_width * @index - @gutter);
+        }
+    }
+
+	.column(@index - 1, @gutter, @name);
+}
+
+.columns(@columns, @gutters: 0px, @name: ~"") {
+
+	.column(0, 0px, @name) {}
+	.column(@columns, 0px, @name);
+
+	.gutters {
+		.column(0, @gutters, @name) {}
+		.column(@columns, @gutters, @name);
+	}
+}

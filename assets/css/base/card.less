@@ -1,0 +1,59 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: calc(var(--gutters) / -1);
+
+    @media (min-width: 641px) {
+        width: calc(100% + var(--gutters));
+        margin-right: calc(var(--gutters) / -2);
+        margin-left: calc(var(--gutters) / -2);
+    }
+
+    .card {
+        margin-bottom: var(--gutters);
+
+        @media (min-width: 641px) {
+            margin-left: calc(var(--gutters) / 2);
+            margin-right: calc(var(--gutters) / 2);
+        }
+
+        @media (min-width: 641px) and (max-width: 1000px) {
+            width: calc(50% - var(--gutters));
+        }
+
+        @media (min-width: 1001px) {
+            width: calc(33.33% - var(--gutters));
+        }
+    }
+}
+
+.card {
+    font-size: 14px;
+    border-radius: 3px;
+    overflow: hidden;
+    color: #555;
+
+    &:hover {
+        cursor: pointer;
+
+        .text-wrap {
+            border-color: var(--border-color-hover)
+        }
+    }
+
+    .image-wrap {
+        position: relative;
+    }
+
+    .text-wrap {
+        padding: 16px;
+        border: 2px solid var(--border-color);
+        border-top: 0;
+        border-radius: 0 0 3px 3px;
+    }
+
+    h4 {
+        font-size: 18px;
+        color: var(--text-color);
+    }
+}
