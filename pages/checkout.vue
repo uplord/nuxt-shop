@@ -10,12 +10,12 @@
                     </a>
                 </li>
                 <li>
-                    <a href="exp://192.168.0.12:19000message=Hello%20World">
+                    <a href="exp://192.168.0.12:19000?message=Hello%20World">
                     Pass back a message of "hello world"
                     </a>
                 </li>
                 <li>
-                    <a href="exp://192.168.0.12:19000authToken=23xbdbb21b3">
+                    <a href="exp://192.168.0.12:19000?authToken=23xbdbb21b3">
                     Pass back some fake auth token
                     </a>
                 </li>
@@ -46,12 +46,12 @@ export default {
         }
         */
 
-        alert(baseUri)
+        //alert(baseUri)
 
         // Update the link urls
         for (var i = 0; i < links.length; ++i) {
             links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
-            alert(links[i].href);
+            //alert(links[i].href);
         }
 
         var redirectInterval = setInterval(function() {
