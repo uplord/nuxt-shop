@@ -51,7 +51,7 @@ export default {
         // Update the link urls
         for (var i = 0; i < links.length; ++i) {
             links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
-            console.log(links[i].href);
+            alert(links[i].href);
         }
 
         var redirectInterval = setInterval(function() {
