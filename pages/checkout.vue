@@ -36,15 +36,15 @@ export default {
     mounted () {
         window.addEventListener('load', () => {
         var links = document.querySelectorAll('a');
-        var baseUri = ''//'exp://192.168.0.12:19000';
+        var baseUri = 'exp://192.168.0.12:19000';
 
         // Take the uri from the params
         var qs = decodeURIComponent(document.location.search);
         if (qs) {
-            baseUri = qs.split('?linkingUri=')[1];
+            //baseUri = qs.split('?linkingUri=')[1];
         }
 
-        //alert(baseUri)
+        alert(baseUri)
 
         // Update the link urls
         for (var i = 0; i < links.length; ++i) {
