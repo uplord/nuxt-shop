@@ -36,7 +36,7 @@ export default {
     mounted () {
         document.addEventListener("DOMContentLoaded", function(event) {
         var links = document.querySelectorAll('a');
-        var baseUri = 'exp://127.0.0.1:19000';
+        var baseUri = 'exp://192.168.0.12:19000';
 
         // Take the uri from the params
         var qs = decodeURIComponent(document.location.search);
