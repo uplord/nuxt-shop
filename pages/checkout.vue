@@ -5,17 +5,17 @@
                 <h2>Redirect example Test</h2>
                 <ul style="margin-left: 0; padding-left: 15px;">
                 <li>
-                    <a href="exp://192.168.0.12:19000">
+                    <a href="exp://REPLACE_ME/">
                     Go back with no params
                     </a>
                 </li>
                 <li>
-                    <a href="exp://192.168.0.12:19000?message=Hello%20World">
+                    <a href="exp://REPLACE_ME/?message=Hello%20World">
                     Pass back a message of "hello world"
                     </a>
                 </li>
                 <li>
-                    <a href="exp://192.168.0.12:19000?authToken=23xbdbb21b3">
+                    <a href="exp://REPLACE_ME/?authToken=23xbdbb21b3">
                     Pass back some fake auth token
                     </a>
                 </li>
@@ -34,9 +34,9 @@
 export default {
     name: 'CheckoutPage',
     mounted () {
-        document.addEventListener("DOMContentLoaded", function(event) {
+        window.addEventListener('load', () => {
         var links = document.querySelectorAll('a');
-        var baseUri = 'exp://192.168.0.12:19000/';
+        var baseUri = 'exp://192.168.0.12:19000';
 
         // Take the uri from the params
         /*
@@ -63,7 +63,7 @@ export default {
 
             if (t === 0) {
             clearInterval(redirectInterval);
-            window.location.href = baseUri + 'message=' + encodeURIComponent('Redirected automatically by timer');
+            window.location.href = baseUri + '?message=' + encodeURIComponent('Redirected automatically by timer');
             }
         }, 1000);
         });
