@@ -5,17 +5,17 @@
                 <h2>Redirect example Test</h2>
                 <ul style="margin-left: 0; padding-left: 15px;">
                 <li>
-                    <a href="exp://REPLACE_ME/">
+                    <a href="exp://192.168.0.12:19000">
                     Go back with no params
                     </a>
                 </li>
                 <li>
-                    <a href="exp://REPLACE_ME/?message=Hello%20World">
+                    <a href="exp://192.168.0.12:19000?message=Hello%20World">
                     Pass back a message of "hello world"
                     </a>
                 </li>
                 <li>
-                    <a href="exp://REPLACE_ME/?authToken=23xbdbb21b3">
+                    <a href="exp://192.168.0.12:19000?authToken=23xbdbb21b3">
                     Pass back some fake auth token
                     </a>
                 </li>
@@ -44,12 +44,10 @@ export default {
             //baseUri = qs.split('?linkingUri=')[1];
         }
 
-        alert(baseUri)
-
         // Update the link urls
         for (var i = 0; i < links.length; ++i) {
             links[i].href = links[i].href.replace('exp://REPLACE_ME/', baseUri);
-            //alert(links[i].href);
+            alert(links[i].href);
         }
 
         var redirectInterval = setInterval(function() {
