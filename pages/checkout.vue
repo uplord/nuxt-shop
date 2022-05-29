@@ -39,10 +39,12 @@ export default {
         var baseUri = 'exp://192.168.0.12:19000/';
 
         // Take the uri from the params
+        /*
         var qs = decodeURIComponent(document.location.search);
         if (qs) {
             baseUri = qs.split('?linkingUri=')[1];
         }
+        */
 
         alert(baseUri)
 
