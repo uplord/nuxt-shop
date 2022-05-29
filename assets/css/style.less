@@ -45,6 +45,10 @@
 @import 'core/section';
 @import 'core/card';
 
+html {
+
+}
+
 .notice {
     background: red;
     display: flex;
@@ -58,7 +62,7 @@ header {
 
     &.sticky {
         position: sticky;
-        top: 0;
+        top: env(safe-area-inset-top);
         z-index: 1000;
     }
 }
